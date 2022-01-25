@@ -23,11 +23,13 @@ class Router
     case action
     when 1 then @meals_controller.list
     when 2 then @meals_controller.add
-    when 3 then @customers_controller.list
-    when 4 then @customers_controller.add
-    when 5 then stop
+    when 3 then @meals_controller.edit
+    when 4 then @meals_controller.destroy
+    when 5 then @customers_controller.list
+    when 6 then @customers_controller.add
+    when 7 then stop
     else
-      puts "Please press 1, 2 or 3."
+      puts "Please press 1, 2, 3, 4, 5, 6 or 7."
     end
   end
 
@@ -42,8 +44,10 @@ class Router
     puts ""
     puts "1 - List all Meals"
     puts "2 - Add new Meal"
-    puts "3 - List customers"
-    puts "4 - Add new customer"
-    puts "5 - Stop and exit the program"
+    puts "3 - Edit a Meal"
+    puts "4 - Delete a Meal"
+    puts "5 - List customers"
+    puts "6 - Add new customer"
+    puts "7 - Stop and exit the program"
   end
 end

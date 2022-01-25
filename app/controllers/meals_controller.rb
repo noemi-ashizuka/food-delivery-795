@@ -22,6 +22,21 @@ class MealsController
     display_meals
   end
 
+  def edit
+    display_meals
+    index = @meals_view.ask_for('number').to_i - 1
+    meal = @meal_repository.all[index]
+    meal.name = @meals_view.ask_for('new name')
+    meal.price = @meals_view.ask_for('new price').to_i
+    @meal_repository.update
+  end
+
+  def destroy
+    display_meals
+    index = @meals_view.ask_for('number').to_i - 1
+    @meal_repository.destroy(index)
+  end
+
   private
 
   def display_meals
