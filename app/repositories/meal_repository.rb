@@ -13,6 +13,10 @@ class MealRepository
     @meals
   end
 
+  def find(id)
+    @meals.find { |meal| meal.id == id }
+  end
+
   def add(meal)
     meal.id = @next_id
     @meals << meal
